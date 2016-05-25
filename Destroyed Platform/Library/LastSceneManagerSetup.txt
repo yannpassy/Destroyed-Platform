@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/destroyed platform.unity
+- path: Assets/Scene/niveauTest.unity
   isLoaded: 1
   isActive: 1
