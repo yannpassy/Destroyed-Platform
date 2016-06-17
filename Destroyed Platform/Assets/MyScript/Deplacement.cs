@@ -2,16 +2,31 @@
 using System.Collections;
 
 public class Deplacement : MonoBehaviour {
+    public Vector3 persoPosition, mousePosition, direction;
+    // Use this for initialization
+    void Start () {
+        persoPosition= transform.position;
+}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //avancer
-        if (Input.GetKey(KeyCode.UpArrow)){
+// Update is called once per frame
+void Update () {
+
+        /*
+         *  Mouse triger
+        */
+        if (Input.GetMouseButtonDown(0))
+        {
+            mousePosition = Input.mousePosition;
+            direction = mousePosition - persoPosition;
+            transform.Translate(direction * Time.deltaTime);
+        }
+
+
+            /*
+             *  Keyboard triger
+            */
+            //avancer
+            if (Input.GetKey(KeyCode.UpArrow)){
             transform.Translate(new Vector3(0,0,5) * Time.deltaTime);
         }
         //reculer
