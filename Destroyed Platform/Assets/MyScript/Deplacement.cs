@@ -16,8 +16,8 @@ void Update () {
         */
         if (Input.GetMouseButtonDown(0))
         {
-            mousePosition = Input.mousePosition;
-            direction = mousePosition - persoPosition;
+        mousePosition = Input.mousePosition;
+        direction = mousePosition - persoPosition;
             transform.Translate(direction * Time.deltaTime);
         }
 
