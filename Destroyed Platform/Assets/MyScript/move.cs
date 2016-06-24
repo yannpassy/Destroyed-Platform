@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.VR;
+using Ovr;
 
 public class move : MonoBehaviour
 {
@@ -10,8 +12,7 @@ public class move : MonoBehaviour
     public float moveSpeed;      // The Speed the character will move
 
     public float speed;
-
-
+	public OVRPose posOculus = OVRManager.display.GetHeadPose (0f);
 
     void Start()
     {
@@ -35,7 +36,10 @@ public class move : MonoBehaviour
         }
 
         Plane playerPlane = new Plane(Vector3.up, myTransform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		OVRCameraRig camera1 = GameObject.Find ("OVRCameraRig").GetComponent<OVRCameraRig> ();
+
+		Ray ray = Camera.main.ScreenPointToRay(posOculus.position);
         float hitdist = 0.0f;
 
         if (playerPlane.Raycast(ray, out hitdist))
