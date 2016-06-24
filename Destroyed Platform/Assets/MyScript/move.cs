@@ -39,7 +39,7 @@ public class move : MonoBehaviour
 
 		OVRCameraRig camera1 = GameObject.Find ("OVRCameraRig").GetComponent<OVRCameraRig> ();
 
-		Ray ray = Camera.main.ScreenPointToRay(posOculus.position);
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float hitdist = 0.0f;
 
         if (playerPlane.Raycast(ray, out hitdist))
