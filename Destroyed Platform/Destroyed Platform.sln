@@ -7,6 +7,8 @@ Project("{32AF3F73-92C2-E258-9A21-E968F0A6D8E8}") = "Destroyed Platform", "Assem
 EndProject
 Project("{32AF3F73-92C2-E258-9A21-E968F0A6D8E8}") = "Destroyed Platform", "Assembly-CSharp-Editor.csproj", "{6D9F577D-3AE1-0746-2487-AAEB4087E23B}"
 EndProject
+Project("{32AF3F73-92C2-E258-9A21-E968F0A6D8E8}") = "Destroyed Platform", "Assembly-UnityScript-firstpass.unityproj", "{F0ECCC0E-F633-E83C-D7A0-D405D1FF4B82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{6D9F577D-3AE1-0746-2487-AAEB4087E23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D9F577D-3AE1-0746-2487-AAEB4087E23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D9F577D-3AE1-0746-2487-AAEB4087E23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0ECCC0E-F633-E83C-D7A0-D405D1FF4B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0ECCC0E-F633-E83C-D7A0-D405D1FF4B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0ECCC0E-F633-E83C-D7A0-D405D1FF4B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0ECCC0E-F633-E83C-D7A0-D405D1FF4B82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
