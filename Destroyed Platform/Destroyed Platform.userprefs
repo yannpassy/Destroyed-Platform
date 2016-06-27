@@ -1,14 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FogOfWar\FogOfWar.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FogOfWar\FogOfWarPlayer.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" Line="52" Column="1" />
+      <File FileName="Assets\FogOfWar\FogOfWar.shader" Line="25" Column="58" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="1" Column="1" />
       <File FileName="Assets\MyScript\move.cs" Line="1" Column="1" />
       <File FileName="Assets\OVR\Scripts\OVRCameraRig.cs" Line="1" Column="1" />
-      <File FileName="Assets\FogOfWar\FogOfWar.shader" Line="53" Column="24" />
-      <File FileName="Temp\Compiled-FogOfWar.shader" Line="1" Column="1" />
-      <File FileName="Temp\GeneratedFromSurface-FogOfWar.shader" Line="1" Column="1" />
+      <File FileName="Assets\FogOfWar\FogOfWarPlayer.cs" Line="18" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
