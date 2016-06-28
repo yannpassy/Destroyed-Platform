@@ -7,6 +7,7 @@ public class DestructionProto : MonoBehaviour {
     private GameObject surfaceDetruite3;
     private GameObject surfaceDetruite4;
     private bool changerPlateforme;
+    private float destruction1 , destruction2, destruction3;
 
     void Start()
     {
@@ -18,9 +19,35 @@ public class DestructionProto : MonoBehaviour {
         surfaceDetruite4 = GameObject.Find("surfaceDetruite4");
         surfaceDetruite4.SetActive(false);
         changerPlateforme = true;
+        destruction1 = 5.0f;
+        destruction2 = 10.0f;
+        destruction3 = 15.0f;
     }
 
-    void OnCollisionEnter(Collision col)
+    void Update()
+    {
+        if (Time.time > destruction1)
+        {
+            surfaceDetruite1.SetActive(false);
+            surfaceDetruite2.SetActive(true);
+        }
+
+        if (Time.time > destruction2)
+        {
+            surfaceDetruite2.SetActive(false);
+            surfaceDetruite3.SetActive(true);
+        }
+
+        if (Time.time > destruction3)
+        {
+            surfaceDetruite3.SetActive(false);
+            surfaceDetruite4.SetActive(true);
+        }
+    }
+
+    //== destruction si le personnage se trouve sur la case
+
+/*    void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.name == "Box001")
         {
@@ -47,5 +74,5 @@ public class DestructionProto : MonoBehaviour {
             surfaceDetruite4.SetActive(true);
             changerPlateforme = false;
         }
-    }
+    }  */
 }
