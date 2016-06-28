@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.VR;
-using Ovr;
 
 public class move : MonoBehaviour
 {
@@ -12,7 +11,9 @@ public class move : MonoBehaviour
     public float moveSpeed;      // The Speed the character will move
 
     public float speed;
-	public OVRPose posOculus = OVRManager.display.GetHeadPose (0f);
+
+	public Camera camera1;
+	public GameObject cube;
 
     void Start()
     {
@@ -25,6 +26,8 @@ public class move : MonoBehaviour
     void Update()
     {
         destinationDistance = Vector3.Distance(destinationPosition, myTransform.position);
+		cube = GameObject.Find ("Cube");
+		cube.transform.position = destinationPosition;
 
         if (destinationDistance < .5f)
         {      // To prevent shakin behavior when near destination
@@ -36,18 +39,16 @@ public class move : MonoBehaviour
         }
 
         Plane playerPlane = new Plane(Vector3.up, myTransform.position);
-
-		OVRCameraRig camera1 = GameObject.Find ("OVRCameraRig").GetComponent<OVRCameraRig> ();
-
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float hitdist = 0.0f;
 
-        if (playerPlane.Raycast(ray, out hitdist))
+		if (playerPlane.Raycast(ray, out hitdist))
         {
             Vector3 targetPoint = ray.GetPoint(hitdist);
             destinationPosition = ray.GetPoint(hitdist);
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
             myTransform.rotation = targetRotation;
+			camera1.transform.LookAt (ray.GetPoint (hitdist));
         }
 
         // To prevent code from running if not needed

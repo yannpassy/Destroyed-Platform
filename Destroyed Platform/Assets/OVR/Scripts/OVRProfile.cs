@@ -1,15 +1,15 @@
-﻿/************************************************************************************
+/************************************************************************************
 
 Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 
-Licensed under the Oculus VR Rift SDK License Version 3.2 (the "License");
+Licensed under the Oculus VR Rift SDK License Version 3.3 (the "License");
 you may not use the Oculus VR Rift SDK except in compliance with the License,
 which is provided at the time of installation or download, or which
 otherwise accompanies this software in either electronic or hard copy form.
 
 You may obtain a copy of the License at
 
-http://www.oculusvr.com/licenses/LICENSE-3.2
+http://www.oculus.com/licenses/LICENSE-3.3
 
 Unless required by applicable law or agreed to in writing, the Oculus VR SDK
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,8 +21,8 @@ limitations under the License.
 
 using UnityEngine;
 using System.Collections;
-using System.Runtime.InteropServices;
 using System.Threading;
+using VR = UnityEngine.VR;
 
 /// <summary>
 /// Contains information about the user's preferences and body dimensions.
@@ -148,35 +148,21 @@ public class OVRProfile : Object
 
 	private void SetFromSystem()
 	{
+		SetFallbackDefaults();
+
 #if UNITY_ANDROID && !UNITY_EDITOR
 		id = jniOvr.CallStatic<string>("getProfileID");
 		userName = jniOvr.CallStatic<string>("getProfileName");
 		locale = jniOvr.CallStatic<string>("getProfileLocale");
-
-		float tmp = 0f;
-		OVR_GetInterpupillaryDistance(ref tmp);
-		ipd = tmp;
-
-		OVR_GetPlayerEyeHeight(ref tmp);
-		eyeHeight = tmp;
-
-		eyeDepth = 0.0805f;
-		neckHeight = eyeHeight - 0.075f;
-#else
-		SetFallbackDefaults();
-
-		if (OVRManager.instance.isVRPresent)
-		{
-			ipd = OVRManager.capiHmd.GetFloat(Ovr.Hmd.OVR_KEY_IPD, Ovr.Hmd.OVR_DEFAULT_IPD);
-			eyeHeight = OVRManager.capiHmd.GetFloat(Ovr.Hmd.OVR_KEY_EYE_HEIGHT, Ovr.Hmd.OVR_DEFAULT_EYE_HEIGHT);
-
-			float[] defaultOffset = new float[] { Ovr.Hmd.OVR_DEFAULT_NECK_TO_EYE_HORIZONTAL, Ovr.Hmd.OVR_DEFAULT_NECK_TO_EYE_VERTICAL };
-			float[] neckToEyeOffset = OVRManager.capiHmd.GetFloatArray(Ovr.Hmd.OVR_KEY_NECK_TO_EYE_DISTANCE, defaultOffset);
-
-			eyeDepth = neckToEyeOffset[0];
-			neckHeight = eyeHeight - neckToEyeOffset[1];
-		}
 #endif
+
+		if (OVRManager.isHmdPresent)
+		{
+			ipd = OVRPlugin.ipd;
+			eyeHeight = OVRPlugin.eyeHeight;
+			eyeDepth = OVRPlugin.eyeDepth;
+			neckHeight = eyeHeight - 0.075f;
+		}
 
 		state = State.READY;
 	}
@@ -194,11 +180,4 @@ public class OVRProfile : Object
 
 		state = State.NOT_TRIGGERED;
 	}
-	
-#if UNITY_ANDROID && !UNITY_EDITOR
-	[DllImport("OculusPlugin")]
-	private static extern bool OVR_GetPlayerEyeHeight(ref float eyeHeight);
-	[DllImport("OculusPlugin")]
-	private static extern bool OVR_GetInterpupillaryDistance(ref float interpupillaryDistance);
-#endif
 }
