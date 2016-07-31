@@ -78,6 +78,7 @@
     <Compile Include="Assets\MyScript\DestructionProto.cs" />
     <Compile Include="Assets\MyScript\ObjectTest.cs" />
     <Compile Include="Assets\MyScript\move.cs" />
+    <Compile Include="Assets\MyScript\sonClique.cs" />
     <Compile Include="Assets\OVR\Moonlight\Scripts\OVRDebugHeadController.cs" />
     <Compile Include="Assets\OVR\Moonlight\Scripts\OVROverlay.cs" />
     <Compile Include="Assets\OVR\Moonlight\Scripts\OVRPlatformMenu.cs" />

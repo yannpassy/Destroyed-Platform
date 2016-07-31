@@ -79,9 +79,10 @@ Assets/CustomParticles/ParticlesController.cs
 Assets/CustomParticles/RopeTape.cs
 Assets/FogOfWar/FogOfWarPlayer.cs
 Assets/MyScript/Deplacement.cs
-Assets/MyScript/DestrutionProto.cs
+Assets/MyScript/DestructionProto.cs
 Assets/MyScript/ObjectTest.cs
 Assets/MyScript/move.cs
+Assets/MyScript/sonClique.cs
 Assets/OVR/Moonlight/Scripts/OVRDebugHeadController.cs
 Assets/OVR/Moonlight/Scripts/OVROverlay.cs
 Assets/OVR/Moonlight/Scripts/OVRPlatformMenu.cs
