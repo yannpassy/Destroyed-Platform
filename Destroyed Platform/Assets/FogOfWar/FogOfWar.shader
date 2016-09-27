@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 // FogOfWar shader
 // Copyright (C) 2013 Sergey Taraban <http://staraban.com>
 //
@@ -39,7 +41,7 @@ SubShader {
 
     void vert(inout appdata_full vertexData, out Input outData) {
         float4 pos = mul(UNITY_MATRIX_MVP, vertexData.vertex);
-        float4 posWorld = mul(_Object2World, vertexData.vertex);
+        float4 posWorld = mul(unity_ObjectToWorld, vertexData.vertex);
         outData.uv_MainTex = vertexData.texcoord;
         outData.location = posWorld.xz;
     }
