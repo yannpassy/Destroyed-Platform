@@ -78,6 +78,7 @@
     <Compile Include="Assets\FogOfWar\FogOfWarPlayer.cs" />
     <Compile Include="Assets\MyScript\Deplacement.cs" />
     <Compile Include="Assets\MyScript\DestructionProto.cs" />
+    <Compile Include="Assets\MyScript\MoveTP.cs" />
     <Compile Include="Assets\MyScript\ObjectTest.cs" />
     <Compile Include="Assets\MyScript\move.cs" />
     <Compile Include="Assets\MyScript\sonClique.cs" />
