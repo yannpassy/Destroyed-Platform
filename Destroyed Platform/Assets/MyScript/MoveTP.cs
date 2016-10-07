@@ -60,8 +60,8 @@ public class MoveTP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		Ray ray = Camera.main.ScreenPointToRay (centreCamera);
-		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);  // pour l'oculus, mettre centreCamera par Input.mousePosition
+        RaycastHit hit;
 		dist = Vector3.Distance (anciennePositionCube, cube.transform.position);
 
 		if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
