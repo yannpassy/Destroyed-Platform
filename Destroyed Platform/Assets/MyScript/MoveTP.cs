@@ -5,7 +5,7 @@ public class MoveTP : MonoBehaviour {
 	public Texture ecranNoirTexture;
 	public float vitesseFondu;
 
-	private enum Etat {Look, AnalyseCommande, fadeOut, teleportation, fadeIn};
+	private enum Etat {Look, AnalyseCommande, fadeOut, teleportation, fadeIn, demiTour};
 	Etat etat;
 	private int drawdepth;
 	private float alpha;
@@ -19,11 +19,12 @@ public class MoveTP : MonoBehaviour {
 	private Vector3 anciennePositionCube;
 	public OVRCameraRig cameraOVR;
 	public GameObject cube;
+    public string tagTouche;
 
-	/// <summary>
-	/// How long it takes to fade.
-	/// </summary>
-	public float fadeTime = 2.0f;
+    /// <summary>
+    /// How long it takes to fade.
+    /// </summary>
+    public float fadeTime = 2.0f;
 	private float dist;
 
 	/// <summary>
@@ -67,6 +68,7 @@ public class MoveTP : MonoBehaviour {
 		if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
 			nouvellePosition = hit.point;
 			cube.transform.position = nouvellePosition;
+            tagTouche = hit.collider.tag;
 		}
 
 		if (etat == Etat.Look) {
@@ -80,17 +82,32 @@ public class MoveTP : MonoBehaviour {
 			}
 
 			if (chrono > 2) {
-				etat = Etat.teleportation;
-			}
+                //etat = Etat.teleportation;
+                etat = Etat.AnalyseCommande;
+            }
 		}
 		else if (etat == Etat.AnalyseCommande) {
-			/*this.transform.position = new Vector3(nouvellePosition.x, nouvellePosition.y+0.6f, nouvellePosition.z);
+            /*this.transform.position = new Vector3(nouvellePosition.x, nouvellePosition.y+0.6f, nouvellePosition.z);
 			cameraOVR.transform.position = new Vector3(nouvellePosition.x, nouvellePosition.y+1.0f, nouvellePosition.z);
 			etat = Etat.Look;*/
+            
+            if (tagTouche == "demi-tour")
+            {
+                etat = Etat.demiTour;
+            }
+            else
+            etat = Etat.Look;
 		}
-			
-			
-	}
+        else if (etat == Etat.demiTour)
+        {
+            perso.transform.rotation *= Quaternion.AngleAxis(180 , Vector3.up);
+            cameraOVR.transform.rotation *= Quaternion.AngleAxis(180, Vector3.up);
+            chrono = 0;
+            etat = Etat.Look;
+        }
+        
+
+        }
 		
 
 	/*IEnumerator teleportation (Vector3 nouvellePostion)
