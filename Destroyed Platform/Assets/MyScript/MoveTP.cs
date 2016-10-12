@@ -96,7 +96,10 @@ public class MoveTP : MonoBehaviour {
                 etat = Etat.demiTour;
             }
             else
-            etat = Etat.Look;
+            {
+                chrono = 0;
+                etat = Etat.Look;
+            }
 		}
         else if (etat == Etat.demiTour)
         {
