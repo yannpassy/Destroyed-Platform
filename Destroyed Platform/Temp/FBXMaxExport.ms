@@ -26,18 +26,18 @@ fn DialogCallback =
 pluginManager.loadClass FBXIMP;
 pluginManager.loadClass FBXEXP;
 
-openLog "D:/Itescia/Detroyed Plateform/Projet/Destroyed-Platform/Destroyed Platform/Temp/3dsMax.log" mode:"w"
+openLog "C:/Users/GUILLA~1/DOCUME~1/DESTRO~4/DESTRO~1/Temp/3dsMax.log" mode:"w"
 print "Start of log file."; flushLog();
 while true do
 (	
-	if ( fileExists "D:/Itescia/Detroyed Plateform/Projet/Destroyed-Platform/Destroyed Platform/Temp/MaxCommandPipe" ) then
+	if ( fileExists "C:/Users/GUILLA~1/DOCUME~1/DESTRO~4/DESTRO~1/Temp/MaxCommandPipe" ) then
 	(
 		exportNormals = false;
 		exportTangents = false;
 		bakeAnimations = false;
 		useFileUnits = false;
 	
-		waitpipe = (openFile "D:/Itescia/Detroyed Plateform/Projet/Destroyed-Platform/Destroyed Platform/Temp/MaxCommandPipe" mode:"r");
+		waitpipe = (openFile "C:/Users/GUILLA~1/DOCUME~1/DESTRO~4/DESTRO~1/Temp/MaxCommandPipe" mode:"r");
 		filename = (readLine waitpipe);
 		
 		for i = 0 to 3 do
@@ -143,7 +143,7 @@ while true do
 					print "Before fbx export"; flushLog();
 					try
 					(
-						exportFile "D:/Itescia/Detroyed Plateform/Projet/Destroyed-Platform/Destroyed Platform/Temp/MaxExportedFBXFile.fbx" #noprompt;
+						exportFile "C:/Users/GUILLA~1/DOCUME~1/DESTRO~4/DESTRO~1/Temp/MaxExportedFBXFile.fbx" #noprompt;
 					)
 					catch
 					(
@@ -152,7 +152,7 @@ while true do
 					print "After fbx export"; flushLog();
 				)
 
-				deleteFile "D:/Itescia/Detroyed Plateform/Projet/Destroyed-Platform/Destroyed Platform/Temp/MaxCommandPipe";
+				deleteFile "C:/Users/GUILLA~1/DOCUME~1/DESTRO~4/DESTRO~1/Temp/MaxCommandPipe";
 				print "Finished max loading and fbx conversion"; flushLog();
 			) -- with defaultAction
 		)
