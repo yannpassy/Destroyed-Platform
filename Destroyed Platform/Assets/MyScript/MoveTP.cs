@@ -49,6 +49,7 @@ public class MoveTP : MonoBehaviour {
 			}
 		} 
 		else if (etat == Etat.AnalyseCommande) {
+            Debug.Log(tagTouchee);
 			if (tagTouchee == "terrain") {
 				etat = Etat.fadeOut;
 			}
@@ -72,8 +73,8 @@ public class MoveTP : MonoBehaviour {
 			}
 		} 
 		else if (etat == Etat.teleportation) {
-			this.transform.position = new Vector3 (nouvellePosition.x, nouvellePosition.y + 0.6f, nouvellePosition.z);
-			cameraOVR.transform.position = new Vector3 (nouvellePosition.x, nouvellePosition.y + 1.0f, nouvellePosition.z);
+			this.transform.position = new Vector3 (nouvellePosition.x, nouvellePosition.y + 10.0f, nouvellePosition.z);
+			cameraOVR.transform.position = new Vector3 (nouvellePosition.x, nouvellePosition.y + 15.0f, nouvellePosition.z);
 			etat = Etat.fadeIn;
 		} 
 		else if (etat == Etat.fadeIn) {
