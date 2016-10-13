@@ -1,11 +1,13 @@
 -debug
 -target:library
 -nowarn:0169
--out:Temp/Assembly-CSharp-Editor-firstpass.dll
+-out:Temp/Assembly-CSharp-Editor.dll
 -r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
 -r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
 -r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
 -r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-CSharp.dll
+-r:Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll"
@@ -92,25 +94,10 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_WIN
 -define:CROSS_PLATFORM_INPUT
-Assets/Plugins/Editor/FMOD/BankRefDrawer.cs
-Assets/Plugins/Editor/FMOD/CreateEventPopup.cs
-Assets/Plugins/Editor/FMOD/EditorBankRef.cs
-Assets/Plugins/Editor/FMOD/EditorEventRef.cs
-Assets/Plugins/Editor/FMOD/EditorParamRef.cs
-Assets/Plugins/Editor/FMOD/EditorUtils.cs
-Assets/Plugins/Editor/FMOD/EventBrowser.cs
-Assets/Plugins/Editor/FMOD/EventCache.cs
-Assets/Plugins/Editor/FMOD/EventManager.cs
-Assets/Plugins/Editor/FMOD/EventRefDrawer.cs
-Assets/Plugins/Editor/FMOD/FindAndReplace.cs
-Assets/Plugins/Editor/FMOD/LogViewer.cs
-Assets/Plugins/Editor/FMOD/MigrationUtil.cs
-Assets/Plugins/Editor/FMOD/ParamRefDrawer.cs
-Assets/Plugins/Editor/FMOD/SettingsEditor.cs
-Assets/Plugins/Editor/FMOD/StudioBankLoaderEditor.cs
-Assets/Plugins/Editor/FMOD/StudioEventEmitterEditor.cs
-Assets/Plugins/Editor/FMOD/StudioEventEmitterGizmoDrawer.cs
-Assets/Plugins/Editor/FMOD/StudioListenerEditor.cs
-Assets/Plugins/Editor/FMOD/StudioParameterTriggerEditor.cs
+Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs
+Assets/Editor/FMODMigrationUtil.cs
+Assets/Editor/MeshInfo.cs
+Assets/OVR/Editor/OVRBuild.cs
+Assets/OVR/Moonlight/Editor/OVRMoonlightLoader.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Xml.Linq.dll"

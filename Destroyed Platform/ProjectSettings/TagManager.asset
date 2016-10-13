@@ -7,6 +7,7 @@ TagManager:
   - terrain
   - totem
   - demi-tour
+  - obstacle
   layers:
   - Default
   - TransparentFX

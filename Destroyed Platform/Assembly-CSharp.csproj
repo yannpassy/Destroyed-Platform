@@ -53,6 +53,8 @@
      <Compile Include="Assets\MyScript\DestructionProto.cs" />
      <Compile Include="Assets\MyScript\Echap.cs" />
      <Compile Include="Assets\MyScript\MoveTP.cs" />
+     <Compile Include="Assets\MyScript\OVRScreenFadeIn.cs" />
+     <Compile Include="Assets\MyScript\OVRScreenFadeOut.cs" />
      <Compile Include="Assets\MyScript\ObjectTest.cs" />
      <Compile Include="Assets\MyScript\move.cs" />
      <Compile Include="Assets\MyScript\recupCollision.cs" />

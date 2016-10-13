@@ -1,13 +1,23 @@
 -debug
 -target:library
--i:UnityEngine
--i:System.Collections
--base:UnityEngine.MonoBehaviour
--nowarn:BCW0016
--nowarn:BCW0003
--method:Main
--out:Temp/Assembly-UnityScript-firstpass.dll
--x-type-inference-rule-attribute:UnityEngineInternal.TypeInferenceRuleAttribute
+-nowarn:0169
+-out:Temp/Assembly-CSharp-Editor.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-CSharp.dll
+-r:Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_4_1
@@ -84,17 +94,10 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_WIN
 -define:CROSS_PLATFORM_INPUT
--r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
--r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
--r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
--r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
--i:UnityEditor
-"Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js"
-"Assets/Standard Assets/Character Controllers/Sources/Scripts/FPSInputController.js"
-"Assets/Standard Assets/Character Controllers/Sources/Scripts/PlatformInputController.js"
-"Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonCamera.js"
-"Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonController.js"
-"Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js"
-"Assets/Standard Assets/Scripts/Camera Scripts/SmoothFollow.js"
-"Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js"
-"Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js"
+Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs
+Assets/Editor/FMODMigrationUtil.cs
+Assets/Editor/MeshInfo.cs
+Assets/OVR/Editor/OVRBuild.cs
+Assets/OVR/Moonlight/Editor/OVRMoonlightLoader.cs
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Xml.Linq.dll"
