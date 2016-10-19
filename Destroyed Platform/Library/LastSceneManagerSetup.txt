@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MyScene/NiveauHiverBis.unity
+- path: Assets/Ultimate Game Tools/Fracturing/02 Sample Scene - Exploding Floor.unity
   isLoaded: 1
   isActive: 1
