@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MyScene/NiveauHiverBis.unity
+- path: Assets/MyScene/PetitProto.unity
   isLoaded: 1
   isActive: 1

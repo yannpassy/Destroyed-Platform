@@ -109,15 +109,19 @@
      <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Materials\builtin_shaders-4.1.3\DefaultResources\Alpha-VertexLit.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\OVR\Moonlight\Shaders\OVRColorRampAlpha.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\OVR\Moonlight\Shaders\Unlit Crosshair.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\OVR\Moonlight\Resources\Unlit Transparent Color.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\sky5X\README.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\Ultimate Game Tools\Fracturing\Editor Shaders\FracturingColored.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Ultimate Game Tools\Fracturing\!Readme - v1.22.txt" />
@@ -129,6 +133,18 @@
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>C:/Users/Guillaume/Documents/Destroyed-Platform/Destroyed Platform/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>C:/Users/Guillaume/Documents/Destroyed-Platform/Destroyed Platform/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>C:/Users/Guillaume/Documents/Destroyed-Platform/Destroyed Platform/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>C:/Users/Guillaume/Documents/Destroyed-Platform/Destroyed Platform/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
