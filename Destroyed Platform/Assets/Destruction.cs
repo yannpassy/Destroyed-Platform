@@ -13,34 +13,44 @@ public class Destruction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		chrono += Time.deltaTime;
-		GameObject.Find ("Cube").transform.DOShakeRotation (2,10,2,10, true);
-		if (chrono > 2) {
+        GameObject.Find ("Cube").transform.DOShakeRotation (2,10,2,10, true);
+        //GameObject.Find("Cube").transform.DOShakeRotation(2, new Vector3(0,10,0), 2, 10, true);
+        if (chrono > 2) {
 			GameObject.Find ("Cube").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube1").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 4) {
 			GameObject.Find ("Cube1").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube3").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 6) {
 			GameObject.Find ("Cube3").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube5").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 8) {
 			GameObject.Find ("Cube5").transform.DOMoveY (-100, 20);
-		} 
+            GameObject.Find("Cube2").transform.DOShakeRotation(2, 10, 2, 10, true);
+        } 
 		if (chrono > 10) {
 			GameObject.Find ("Cube2").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube6").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 12) {
 			GameObject.Find ("Cube6").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube2").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 14) {
 			GameObject.Find ("Cube2").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube4").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 16) {
 			GameObject.Find ("Cube4").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube7").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 18) {
 			GameObject.Find ("Cube7").transform.DOMoveY (-100, 20);
-		}
+            GameObject.Find("Cube9").transform.DOShakeRotation(2, 10, 2, 10, true);
+        }
 		if (chrono > 20) {
 			GameObject.Find ("Cube9").transform.DOMoveY (-100, 20);
 		}
