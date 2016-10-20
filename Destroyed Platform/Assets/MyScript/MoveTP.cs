@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class MoveTP : MonoBehaviour {
 	public Transform objectReference;
@@ -15,7 +16,7 @@ public class MoveTP : MonoBehaviour {
 	private OVRScreenFadeOut fadeout;
 	private OVRScreenFadeIn fadein;
 
-	private Vector3 anciennePositionCube;
+	private Vector3 anciennePositionCube, scaleCurseur, scaleValidation;
 	public Camera cam;
 	public GameObject cube;
 
@@ -23,12 +24,13 @@ public class MoveTP : MonoBehaviour {
 	void Start(){
 		centreCamera = new Vector3 (Screen.width / 2.0f, Screen.height / 2.0f, cameraOVR.transform.forward.z);
 		etat = Etat.Look;
-	}
+
+    }
 
 	// Update is called once per frame
 	void Update () {
 		
-		Ray ray = Camera.main.ScreenPointToRay (centreCamera);  // pour l'oculus, mettre centreCamera par Input.mousePosition
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);  // pour l'oculus, mettre centreCamera par Input.mousePosition
 		RaycastHit hit;
 		dist = Vector3.Distance (anciennePositionCube, cube.transform.position);
 
@@ -46,7 +48,13 @@ public class MoveTP : MonoBehaviour {
 				anciennePositionCube = nouvellePosition;
 			}
 
-			if (chrono > 2) {
+            if (chrono > 1)
+            {
+                //cube.transform.DOScale(0.05f, 1);
+                cube.transform.DOScale(new Vector3(0.05f,0.17f,0.05f), 1.5f);
+            }
+
+            if (chrono > 2) {
 				//etat = Etat.teleportation;
 				etat = Etat.AnalyseCommande;
 			}
