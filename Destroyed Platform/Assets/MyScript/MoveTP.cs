@@ -43,7 +43,7 @@ public class MoveTP : MonoBehaviour {
 		}
 
          if (etat == Etat.Look) {
-			if (dist < 0.5f) {
+			if (dist < 0.1f) {
 				chrono += Time.deltaTime;
 			} else{
                 chrono = 0;
