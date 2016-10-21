@@ -5,7 +5,7 @@ using DG.Tweening;
 public class MoveTP : MonoBehaviour {
 	public Transform objectReference;
 	public OVRCameraRig cameraOVR;
-	private enum Etat {Look, AnalyseCommande, fadeOut, teleportation, fadeIn, demiTour};
+	private enum Etat {Look, AnalyseCommande, fadeOut, teleportation, fadeIn, demiTour, resetSizeCursur};
 	Etat etat;
 	private Vector3 centreCamera;
 	private Vector3 nouvellePosition;
@@ -24,6 +24,8 @@ public class MoveTP : MonoBehaviour {
 	void Start(){
 		centreCamera = new Vector3 (Screen.width / 2.0f, Screen.height / 2.0f, cameraOVR.transform.forward.z);
 		etat = Etat.Look;
+        scaleCurseur = new Vector3(0.3f, 0.3f, 0.3f);
+        scaleValidation = new Vector3(0.05f, 0.17f, 0.05f);
 
     }
 
@@ -40,22 +42,21 @@ public class MoveTP : MonoBehaviour {
 			tagTouchee = hit.collider.tag;
 		}
 
-		if (etat == Etat.Look) {
-			if (dist < 1.0f) {
+         if (etat == Etat.Look) {
+			if (dist < 0.5f) {
 				chrono += Time.deltaTime;
-			} else {
-				chrono = 0;
-				anciennePositionCube = nouvellePosition;
-			}
+			} else{
+                chrono = 0;
+                anciennePositionCube = nouvellePosition;
+                etat = Etat.resetSizeCursur;
+            }
 
             if (chrono > 1)
             {
-                //cube.transform.DOScale(0.05f, 1);
-                cube.transform.DOScale(new Vector3(0.05f,0.17f,0.05f), 1.5f);
+                cube.transform.DOScale(scaleValidation, 1);
             }
 
             if (chrono > 2) {
-				//etat = Etat.teleportation;
 				etat = Etat.AnalyseCommande;
 			}
 		} 
@@ -65,46 +66,55 @@ public class MoveTP : MonoBehaviour {
 				etat = Etat.fadeOut;
 			}
 			if (tagTouchee == "obstacle") {
-				chrono = 0;
-				etat = Etat.Look;
+                chrono = 0;
+                etat = Etat.resetSizeCursur;
 			}
 			if (tagTouchee == "demi-tour") {
 				etat = Etat.demiTour;
 			}
 		} 
 		else if (etat == Etat.fadeOut) {
-			Debug.Log ("c'est bon");
 			cam.GetComponent<OVRScreenFadeOut> ().enabled = true;
 			chronoFadeOut += Time.deltaTime;
 			if (chronoFadeOut > cam.GetComponent<OVRScreenFadeOut> ().fadeTime) {
-				Debug.Log ("c'est bon");
 				cam.GetComponent<OVRScreenFadeOut> ().enabled = false;
 				etat = Etat.teleportation;
 				chronoFadeOut = 0;
 			}
 		} 
 		else if (etat == Etat.teleportation) {
+            cube.transform.DOScale(scaleCurseur, 0.01f);
 			this.transform.position = new Vector3 (nouvellePosition.x, nouvellePosition.y+1.0f, nouvellePosition.z);
 			cameraOVR.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+0.6f, this.transform.position.z);
-			etat = Etat.fadeIn;
+            etat = Etat.fadeIn;
 		} 
 		else if (etat == Etat.fadeIn) {
 			cam.GetComponent<OVRScreenFadeIn> ().enabled = true;
 			chronoFadeIn += Time.deltaTime;
 			if (chronoFadeIn > cam.GetComponent<OVRScreenFadeIn> ().fadeTime) {
 				cam.GetComponent<OVRScreenFadeIn> ().enabled = false;
-				chronoFadeIn = 0;
+                chronoFadeIn = 0;
 				etat = Etat.Look;
 			}
 		}
 		else if (etat == Etat.demiTour) {
 			this.transform.rotation *= Quaternion.AngleAxis (180, Vector3.up);
 			cameraOVR.transform.rotation *= Quaternion.AngleAxis (180, Vector3.up);
-			chrono = 0;
-			etat = Etat.Look;
+            cube.transform.DOScale(scaleCurseur, 0.01f);
+            chrono = 0;
+            etat = Etat.Look;
 		}
-        
+         else if(etat == Etat.resetSizeCursur){
+            cube.transform.DOScale(scaleCurseur, 0.01f);
+            chrono += Time.deltaTime;
+            if (chrono > 1)
+            {
+                chrono = 0;
+                etat = Etat.Look;
+            }
+        }
 
-	}
+
+    }
 
 }
