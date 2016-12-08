@@ -8,14 +8,14 @@ public class ShaderActive : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
-        shaderDisolve = Shader.Find("Disolving");
+        shaderDisolve = Shader.Find("Dissolving");
 	}
 	
 	// Update is called once per frame
 	void OnColliderEnter (Collision collision) {
 		if(collision.gameObject.tag == "bloc")
         {
-            
+            rend.material.SetFloat("_SliceAmount", 0.5f);
         }
 	}
 }
