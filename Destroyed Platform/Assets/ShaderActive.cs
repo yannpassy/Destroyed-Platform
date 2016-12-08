@@ -15,7 +15,7 @@ public class ShaderActive : MonoBehaviour {
 	void OnColliderEnter (Collision collision) {
 		if(collision.gameObject.tag == "bloc")
         {
-            rend.material.shader.
+            
         }
 	}
 }
