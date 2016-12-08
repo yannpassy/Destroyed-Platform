@@ -46,3 +46,16 @@ Network Trash Folder
 Temporary Items
 .apdisk
 Destroyed Platform/Temp/UnityLockfile
+Destroyed Platform/Library/shadercompiler-UnityShaderCompiler.exe0.log
+Destroyed Platform/.vs/Destroyed Platform/v14/.suo
+*.suo
+Destroyed Platform/Assets/Materials/Shader.meta
+*.meta
+Destroyed Platform/Library/metadata/76/76cecc6e22bff734cb66b7694a848df0
+*.info
+Destroyed Platform/Library/ScriptAssemblies/Assembly-CSharp.dll
+*.dll
+Destroyed Platform/Library/ScriptAssemblies/Assembly-UnityScript-Editor.dll.mdb
+*.mdb
+Destroyed Platform/Library/ScriptAssemblies/Assembly-UnityScript.dll
+Destroyed Platform/Temp/3dsMax.log
