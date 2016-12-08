@@ -5,63 +5,67 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400000}
-  - 20: {fileID: 2000000}
-  - 92: {fileID: 9200000}
-  - 124: {fileID: 12400000}
-  - 81: {fileID: 8100000}
-  - 114: {fileID: 11400000}
-  - 45: {fileID: 4500000}
+  - component: {fileID: 400000}
+  - component: {fileID: 2000000}
+  - component: {fileID: 9200000}
+  - component: {fileID: 12400000}
+  - component: {fileID: 8100000}
+  - component: {fileID: 11400000}
+  - component: {fileID: 4500000}
   m_Layer: 0
   m_Name: Prefab Fracturing FPS Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400002}
-  - 33: {fileID: 3300000}
-  - 23: {fileID: 2300000}
-  - 111: {fileID: 11100000}
+  - component: {fileID: 400002}
+  - component: {fileID: 3300000}
+  - component: {fileID: 2300000}
+  - component: {fileID: 11100000}
   m_Layer: 0
   m_Name: smach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: .990605175, z: 0, w: .136753157}
-  m_LocalPosition: {x: -8.3449707, y: 0, z: 20.4364624}
+  m_LocalRotation: {x: 0, y: 0.9906052, z: 0, w: 0.13675316}
+  m_LocalPosition: {x: -8.344971, y: 0, z: 20.436462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: .0135808736, y: -.733405113, z: -.679498136, w: -.0146582909}
-  m_LocalPosition: {x: .699999988, y: -.349999994, z: 1.5}
+  m_LocalRotation: {x: 0.013580874, y: -0.7334051, z: -0.67949814, w: -0.014658291}
+  m_LocalPosition: {x: 0.7, y: -0.35, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -71,14 +75,14 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: .0500000007
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -89,9 +93,15 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!23 &2300000
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -99,15 +109,28 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 1cdf062e99a0b6240a78d1d633794c54, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -151,9 +174,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
-  m_UserAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,24 +182,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9c10a0035fe38468d4944c9e6ce006, type: 1}
+  m_Script: {fileID: 11500000, guid: 9c9c10a0035fe38468d4944c9e6ce006, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   ShootMode: 1
-  MouseSpeed: .300000012
-  HUDTexture: {fileID: 2800000, guid: 24aef76aa2452fd48b1ed66a8decc434, type: 1}
-  HUDSize: .0299999993
-  HUDColorNormal: {r: .641791046, g: .641791046, b: .641791046, a: 1}
+  MouseSpeed: 0.3
+  HUDTexture: {fileID: 2800000, guid: 24aef76aa2452fd48b1ed66a8decc434, type: 3}
+  HUDSize: 0.03
+  HUDColorNormal: {r: 0.64179105, g: 0.64179105, b: 0.64179105, a: 1}
   HUDColorRaycast: {r: 1, g: 0, b: 0, a: 1}
   Weapon: {fileID: 400002}
-  AudioWeaponShot: {fileID: 8300000, guid: 3079f45b6f4f4de40b46bda460737699, type: 1}
-  WeaponShotVolume: .200000003
-  ExplosionForce: 5
+  AudioWeaponShot: {fileID: 8300000, guid: 3079f45b6f4f4de40b46bda460737699, type: 3}
+  WeaponShotVolume: 0.2
+  ExplosionForce: 0.1
   ExplosionRadius: 1
-  RecoilDuration: .150000006
-  RecoilIntensity: .200000003
+  RecoilDuration: 0.15
+  RecoilIntensity: 0.2
   ObjectToShoot: {fileID: 100000, guid: 4cbe28baebe6cca4fa0ab0ee06aecbc7, type: 2}
   InitialObjectSpeed: 20
-  ObjectScale: .300000012
+  ObjectScale: 0.3
   ObjectMass: 200
   ObjectLife: 5
 --- !u!124 &12400000
@@ -200,4 +221,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

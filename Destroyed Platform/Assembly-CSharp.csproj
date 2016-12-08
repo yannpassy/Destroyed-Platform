@@ -92,6 +92,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRTrackerBounds.cs" />
+     <Compile Include="Assets\ShaderActive.cs" />
      <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\P2T.cs" />
      <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\Triangulation\Delaunay\DelaunayTriangle.cs" />
      <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\Triangulation\Delaunay\Sweep\AdvancingFront.cs" />
@@ -149,6 +150,7 @@
      <Compile Include="Assets\Ultimate Game Tools\Fracturing\Scripts\Triangulate.cs" />
      <Compile Include="Assets\Ultimate Game Tools\MeshCombiner\Scripts\CombinedMesh.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
+     <None Include="Assets\Materials\Shader\ShaderDisolve.shader" />
      <None Include="Assets\Materials\builtin_shaders-4.1.3\DefaultResources\Alpha-VertexLit.shader" />
      <None Include="Assets\Inventory\Credits + C#.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
@@ -172,9 +174,6 @@
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Guillaume/Desktop/Destroyed-Platform/Destroyed Platform/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -189,9 +188,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>

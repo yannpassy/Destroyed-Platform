@@ -15,6 +15,7 @@ TagManager:
   - Rejouer
   - Quitter
   - Fin
+  - bloc
   layers:
   - Default
   - TransparentFX
